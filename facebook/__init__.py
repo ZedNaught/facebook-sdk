@@ -229,7 +229,7 @@ class GraphAPI(object):
         try:
             headers = response.headers
             version = headers["facebook-api-version"].replace("v", "")
-            return float(version)
+            return version
         except Exception:
             raise GraphAPIError("API version number not available")
 

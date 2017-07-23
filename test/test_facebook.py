@@ -132,7 +132,7 @@ class TestAPIVersion(FacebookTestCase):
     def test_valid_versions(self):
         for version in facebook.VALID_API_VERSIONS:
             graph = facebook.GraphAPI(version=version)
-            self.assertEqual(str(graph.get_version()), version)
+            self.assertEqual(graph.get_version(), version)
 
     def test_invalid_version(self):
         self.assertRaises(facebook.GraphAPIError,
