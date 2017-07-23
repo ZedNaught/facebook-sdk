@@ -144,9 +144,13 @@ class TestAPIVersion(FacebookTestCase):
         self.assertRaises(facebook.GraphAPIError,
                           facebook.GraphAPI, version="a.1")
         self.assertRaises(facebook.GraphAPIError,
-                          facebook.GraphAPI, version=2.23)
+                          facebook.GraphAPI, version=2.03)
         self.assertRaises(facebook.GraphAPIError,
-                          facebook.GraphAPI, version="2.23")
+                          facebook.GraphAPI, version="2.03")
+        self.assertRaises(facebook.GraphAPIError,
+                          facebook.GraphAPI, version=2.113)
+        self.assertRaises(facebook.GraphAPIError,
+                          facebook.GraphAPI, version="2.113")
 
 
 class TestAuthURL(FacebookTestCase):
